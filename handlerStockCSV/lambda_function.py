@@ -17,16 +17,16 @@ stocksCSVPath = "/stocks-csv"
 apiKey = "zK4PZnciphgwbnGWE06gT3TugVkR0CKa" 
 
 
-# def lambda_handler (event, context):
-#     logger.info(event)
-#     httpMethod = event['httpMethod']
-#     path = event['path']
-#     if httpMethod == getMethod and path == stocksCSVPath:
-#         requestParams = event['queryStringParameters']
-#         response = generateCSV(requestParams)
-#     else:
-#         response = buildResponse(404, 'Not Found')
-#     return response
+def lambda_handler (event, context):
+    logger.info(event)
+    httpMethod = event['httpMethod']
+    path = event['path']
+    if httpMethod == getMethod and path == stocksCSVPath:
+        requestParams = event['queryStringParameters']
+        response = generateCSV(requestParams)
+    else:
+        response = buildResponse(404, 'Not Found')
+    return response
 
 def generateCSV(requestParams):
     try:
