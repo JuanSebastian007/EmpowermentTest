@@ -71,6 +71,7 @@ def buildResponse(statusCode, body = None):
             'Access-Control-Allow-Origin': '*',
             }
     }
+    
     if body is not None:
         response['body'] = json.dumps(body, cls=CustomEncoder)
     return response
